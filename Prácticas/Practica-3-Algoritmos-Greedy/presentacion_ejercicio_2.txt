@@ -1,0 +1,59 @@
+			EJEMPLO
+Paso 1:
+	Partimos de la mesa vacia con una lista de candidatos C posibles y una lista de candidatos de
+	candidatos seleccionados vacia:
+	
+		C= [1,2,3,4,5]
+		S= [ ]
+Paso 2:
+	Escogemos el invitado que maximiza la suma de niveles de conveniencia con los invitados ya
+	asignados. Como la mesa está vacía, seleccionamos cualquier invitado. Seleccionamos al 
+	invitado 1.
+	Lo añadimos a la lista de candidatos seleccionados y lo sacamos de la lista de candidatos
+	posibles y acumulamos suma:
+		
+		C= [2,3,4,5]
+		S= [1]	
+		Suma Conveniencia = 0
+Paso 3:
+	Comprobamos que invitado tiene mayor nivel de conveniencia con respecto al invitado.
+		C= [2,3,4]
+		S= [1,5]	
+		Suma Conveniencia = 0 + 40
+		
+Paso 4: 
+	Repetimos este proceso para cada invitado nuevo añadido a la mesa:
+		
+	S = [1, 5, 2]		  	       S = [1, 5, 2, 4]
+	C = [3,4]	     	         --->  C = [3]  			 --->
+	Suma Conveniencia = 40 + 35 = 75       Suma Conveniencia = 75 + 25 = 100
+
+
+		S = [1, 5, 2, 4, 3]			
+	--->    C = [ ]
+		Suma Conveniencia = 100 + 10 = 110
+ 
+Paso 5: 
+ 	Finalmente volvemos a añadir o sumar el primer invitado sentado, en este caso es el 1, 
+ 	ya que la mesa es circular y tiene una conveniencia con respecto al 3 de 20:
+ 	
+ 		Suma de conveniencia Total = 130
+ 	
+ 	
+			----OPTIMALIDAD----
+
+A partir del ejemplo anterior donde S = [1, 5, 2, 4, 3, 1] y conveniencia total = 130, tiene una eficiencia de O(n) porque solo recorre un bucle de candidatos.
+Buscamos otra posible combinacion para S donde se pueda dar un caso mas optimo, por ejemplo si la lista de candidatos estuviera ordenada al reves:
+
+		C = [5, 4, 3, 2, 1] se obtiene S = [5, 1, 4, 2, 3, 5]  con suma = 130
+		
+Por lo tanto podemos afirmar que no existe ninguna combinacion que sea mayor que esta suma ya que con 
+un algoritmo Greedy  siempre se va cogiendo el mejor y como en cada paso se va descartando el 
+escogido ya que no se puede volver a sentar el invitado, el amaño se ira reduciendo cogiendo para 
+cada candidato el mejor.
+
+En un fuerza bruta se podria obtener tambien la mejor solucion pero con la diferencia de que habria
+que recorrer la matriz muchas veces hasta localizar el elemento mejor.
+
+Por lo tanto el greedy es optimo y mas eficiente que un fuerza bruta.
+	
