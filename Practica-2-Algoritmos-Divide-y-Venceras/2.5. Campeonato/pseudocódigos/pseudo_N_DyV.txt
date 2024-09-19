@@ -1,0 +1,16 @@
+Estructura Partido
+jugador1
+jugador2
+end
+
+Función organizaCampeonato(n)
+    Inicializar calendario como un vector de vectores de tamaño n-1
+    Para cada i desde 0 hasta n:
+        Para cada j desde i+1 hasta n:
+            Crear un partido con jugador1 = i y jugador2 = j
+            Añadir el partido al calendario en el día[j - i - 1]
+       end
+	end
+end
+
+

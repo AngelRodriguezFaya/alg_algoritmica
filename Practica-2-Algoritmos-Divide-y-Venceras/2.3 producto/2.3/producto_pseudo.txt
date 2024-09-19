@@ -1,0 +1,28 @@
+Function producto_tres_consecutivos(N)
+    raiz_cubica = RedondeoalaAlta(RaízCúbica(N))
+
+    Para i desde 1 hasta raiz_cubica:
+        producto = i * (i + 1) * (i + 2)
+        Si producto es igual a N:
+            Devolver true
+        Si producto es mayor a N:
+            Devolver true
+    end
+
+    Devolver false
+end
+
+
+Ejemplo:
+
+Supongamos que queremos verificar si el número N=120 puede expresarse como el producto de tres
+números naturales consecutivos.
+
+1. Comenzamos calculando la raíz cúbica de N que es 5.84 y redondeandolo a la alta nos quedamos
+con 6
+
+2. iteramos desde 1 hasta 6 
+3. Para i=1, calculamos el producto de i,i+1,i+2, que es 1*2*3=6 !=N
+4. Para i=2, 2*3*4=24 !=N
+5. Para i=3, 3*4*5=60 !=N
+6. Para i=4, 4*5*6=120 ==N  --> Devoldemos true
